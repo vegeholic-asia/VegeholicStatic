@@ -1,4 +1,4 @@
-(function () {
+;(function () {
 	
 	'use strict';
 
@@ -231,7 +231,7 @@ $(function(){
     });
 
     $('.carousel').carousel({
-      interval: 2000,
+      interval: 3000,
       pause: "hover"
     });
 });
