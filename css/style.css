@@ -87,7 +87,7 @@ p, ul, ol {
 }
 
 h2 {
-	font-family: 'cwTeXFangSong', serif;
+	font-family: 'cwTeXYen', serif;
 	color: #27E1CE;  
 	font-size: 3rem;
 	font-weight: 700;
@@ -95,7 +95,7 @@ h2 {
 }
 
 h3 {
-	font-family: 'cwTeXFangSong', serif;
+	font-family: 'cwTeXYen', serif;
 	color: #27E1CE;
 	font-size: 2rem;
 	font-weight: 400;
@@ -131,10 +131,17 @@ h4, h5, h6 {
 	padding: 10px 0 60px 0;
 }
 
+.nav #logo img {
+	width: 260px;
+}
+
 @media screen and (max-width: 768px) {
 	.nav #logo {
 		margin-bottom: 0;
-		padding: 10px 0 10px 0;
+		padding: 5px 0 5px 0;
+	}
+	.nav #logo img {
+		width: 200px;
 	}
 }
 .nav a {
@@ -274,6 +281,132 @@ h4, h5, h6 {
 	display: block;
 	height: 100%;
 }
+
+/* ========== Head  cover ================ */
+
+#header,
+.bg {
+	background-size: cover;
+	background-position: top center;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.bg {
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+	width: 100%;
+	float: left;
+	position: relative;
+}
+
+
+.cover {
+	height: 900px;
+	background-size: cover;
+	background-position: top center;
+	background-repeat: no-repeat;
+	position: relative;
+	float: left;
+	width: 100%;
+}
+.cover .overlay {
+	z-index: 0;
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: rgba(42, 54, 59, 0.9);
+}
+.cover > .container {
+	position: relative;
+	z-index: 10;
+}
+@media screen and (max-width: 768px) {
+	.cover {
+		height: 400px;
+	}
+}
+.cover .display-t,
+.cover .display-tc {
+	z-index: 9;
+	height: 900px;
+	display: table;
+	width: 100%;
+}
+@media screen and (max-width: 768px) {
+	.cover .display-t,
+	.cover .display-tc {
+		height: 400px;
+  }
+}
+.cover.cover-sm {
+	height: 400px;
+}
+@media screen and (max-width: 768px) {
+	.cover.cover-sm {
+		height: 300px;
+	}
+}
+.cover.cover-sm .display-t,
+.cover.cover-sm .display-tc {
+	height: 400px;
+	display: table;
+	width: 100%;
+}
+@media screen and (max-width: 768px) {
+	.cover.cover-sm .display-t,
+	.cover.cover-sm .display-tc {
+		height: 300px;
+	}
+}
+
+.mb30 {
+	margin-bottom: 30px !important;
+}
+
+#header .display-tc,
+.cover .display-tc {
+	display: table-cell !important;
+	vertical-align: middle;
+}
+#header .display-tc h1, 
+.cover .display-tc h1 {
+	margin: 0;
+	padding: 250px 0 0 0;
+	color: white;
+	font-size: 60px;
+	line-height: 1.5;
+	text-transform: uppercase;
+	font-weight: 300;
+}
+@media screen and (max-width: 768px) {
+	#header .display-tc h1,
+	.cover .display-tc h1 {
+		padding-top: 200px;
+		font-size: 40px;
+	}
+}
+
+#header .display-tc .link-watch,
+.cover .display-tc .link-watch {
+	border-bottom: none;
+}
+#header .display-tc .form-inline .form-group,
+.cover .display-tc .form-inline .form-group {
+	width: 100% !important;
+	margin-bottom: 10px;
+}
+#header .display-tc .form-inline .form-group .form-control,
+.cover .display-tc .form-inline .form-group .form-control {
+	width: 100%;
+	background: #fff;
+	border: none;
+}
+
+
 
 /* ========== Off-Canvas出現覆蓋陰影 ================ */
 
@@ -534,7 +667,7 @@ h4, h5, h6 {
 }
 .heading h2 {
 	margin:10px 0;
-	font-weight: 300;
+	font-weight: 500;
 	line-height: 1.5;
 	bottom: 10px;
 }
@@ -612,7 +745,6 @@ h4, h5, h6 {
 	margin: 45px 0 0 20px;
 }
 
-/* ================ meal 精選食譜 ================ */
 
 #meal .meal {
 	margin-bottom: 30px;
