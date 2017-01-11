@@ -204,7 +204,6 @@
         contentWayPoint();
         dropdown();
         goToTop();
-        loaderPage();
         counterWayPoint();
     });
 
@@ -233,6 +232,7 @@
             minItems: getGridSize(), // use function to pull in initial value
             maxItems: getGridSize() // use function to pull in initial value
         });
+        loaderPage();
     });
 
     // check grid size on resize event
