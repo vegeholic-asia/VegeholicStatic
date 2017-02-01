@@ -28,28 +28,26 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="全植食尚 Vegeholic">
 
-    <!-- Animate.css -->
+    <!-- Animate.css 動畫 -->
 	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<link rel="stylesheet" type="text/css" href="css/flaticon.css">
 	<!-- Bootstrap  -->
 	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
-	<!-- Flexslider -->
+	<!-- Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" type="text/css" href="css/flaticon.css">		
+	<!-- Flexslider 內容輪播滑動插件-->
 	<link rel="stylesheet" href="css/flexslider.css">
+	<!-- Magnific Popup 燈箱效果插件-->
+	<link rel="stylesheet" href="css/magnific-popup.css">	
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
 
-	<!-- Modernizr JS -->
+	<!-- Modernizr JS 判斷是否支援HTML5功能-->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 
 	<style type="text/css">
-		@import url(http://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
 		@import url(http://fonts.googleapis.com/earlyaccess/cwtexyen.css);
 	</style>
-
 </head>
 
 <body>
@@ -61,11 +59,29 @@
 		<nav class="nav col-xs-12" role="navigation">
 			<div class="container">
 				<div class="row">
-					<ul class="navright">
-						<li><a href="#">註冊</a></li>
-						<li>｜</li>
-						<li><a href="#">登入</a></li>
-					</ul>
+					<div class="navright">
+						<ul>
+							<li><a href="#">註冊</a></li>
+							<li>｜</li>
+							<li><a href="#">登入</a></li>
+						</ul>
+					</div>
+					<div class="navright" style="display:none">
+						<ul>
+							<li>歡迎~</li>
+							<li class="has-dropdown">
+								<a href="#">會員名稱<span class="icon-chevron-down" style="margin-left:10px; font-size:0.8em"></span></a>
+								<ul class="dropdown">
+									<li><a href="member.html"><span class="icon-user" style="margin-right:10px"></span>會員專區</a></li>
+									<li><a href="#"><span class="icon-pencil" style="margin-right:10px"></span>我的食譜</a></li>
+									<li><a href="#"><span class="icon-chat" style="margin-right:10px"></span>我的留言</a></li>
+									<li><a href="#"><span class="icon-heart2" style="margin-right:10px"></span>最愛收藏</a></li>
+									<li><a href="#"><span class="icon-reply2" style="margin-right:10px"></span>登出</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					
 					<div class="col-xs-12 text-center">
 						<div id="logo"><a href="index.html"><img src="images/logo.svg" width="260" alt="全植食尚 Vegeholic"/> </a></div>
 			    	</div>
@@ -87,8 +103,7 @@
 	 	<!-- 第二層 header 圖片 -->
 		<header id="header" class="cover" role="banner" style="background-image:url(images/img_bg_index.jpg);">
 			<div class="overlay"></div>
-		</header>
-		
+		</header>		
 
 		<!-- seach 食譜食材搜尋 -->
 		<div id = "search" >
@@ -99,7 +114,7 @@
 							<input type="search" class="form-control"  placeholder="搜尋食譜名稱或烹飪食材">
 						</div>
 						<div class="col-md-2 col-xs-4">
-							<button type="submit" class="btn"><i class="icon-search"></i></button>
+							<button type="submit" class="btn btn-primary"><i class="icon-search"></i></button>
 						</div>
 					</div>
 				</div>
@@ -136,7 +151,7 @@
 		<div id="meal" class="bg-section">
 			<div class="container">
 				<div class="row row-pb-md">
-					<div class="col-md-8 col-md-offset-2 text-center heading  animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center heading">
 						<span>Want Some Sweet Food</span>
 						<h2>精選食譜</h2>
 					</div>
@@ -149,12 +164,12 @@
 							<i class="icon-heart2"></i>64
 						</div>
 						<a href="#">
-							<img src="images/food_1.jpg" class="img-responsive">
-							<h4>巧克力慕斯</h4>
+							<img src="images/food.jpg" class="img-responsive">
+							<h4>食譜名稱</h4>
 						</a>
 						<p class="author">
 							<img src="images/person.jpg">
-							<cite>扁豆丸子</cite>
+							<cite>食譜作者</cite>
 						</p>
 					</div>
 
@@ -164,27 +179,26 @@
 							<i class="icon-heart2"></i>64
 						</div>
 						<a href="#">
-							<img src="images/food_2.jpg" class="img-responsive">
-							<h4>經典法國鹹派</h4>
+							<img src="images/food.jpg" class="img-responsive">
+							<h4>食譜名稱</h4>
 						</a>
 						<p class="author">
 							<img src="images/person.jpg">
-							<cite>營養酵母</cite>
+							<cite>食譜作者</cite>
 						</p>
 					</div>
-
 					<div class="col-md-4 col-sm-6 meal animate-box" data-animate-effect="fadeIn">
 						<div class="preview">
 							<i class="icon-eye"></i>123
 							<i class="icon-heart2"></i>64
 						</div>
 						<a href="#">
-							<img src="images/food_3.jpg" class="img-responsive">
-							<h4>歐姆蛋</h4>
+							<img src="images/food.jpg" class="img-responsive">
+							<h4>食譜名稱</h4>
 						</a>
 						<p class="author">
 							<img src="images/person.jpg">
-							<cite>鷹嘴豆粉</cite>
+							<cite>食譜作者</cite>
 						</p>
 					</div>
 				</div>
@@ -195,7 +209,6 @@
 				</div>
 			</div>
 		</div>
-
 
 		<!-- 第五層 活動 -->
 		<div id="activities">
@@ -252,9 +265,7 @@
 				</div>
 			</div>
 		</div>
-
-
-
+		
 		<!-- footer 底部 -->
 		<footer id="foot" role="contentinfo" class=" bg-footer">
 			<div class="container">
@@ -285,10 +296,10 @@
 					<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
 						<ul class=" footer-links">
 							<h4>會員服務</h4>
-							<li><a href="#">個人首頁</a></li>
-							<li><a href="#">我的收藏</a></li>
-							<li><a href="#">帳號設定</a></li>
+							<li><a href="#">會員專區</a></li>
+							<li><a href="#">我的食譜</a></li>
 							<li><a href="#">忘記密碼</a></li>
+							<li><a href="#">聯絡我們</a></li>
 						</ul>
 					</div>
 					<div class="col-md-4 col-sm-6 col-xs-6 col-md-push-1 ">
@@ -315,21 +326,22 @@
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
 
+	
+	
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
+	<!-- jQuery Easing 動畫效果擴充-->
 	<script src="js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- countTo -->
-	<script src="js/jquery.countTo.js"></script>
-	<!-- Magnific Popup -->
+	<script src="js/bootstrap.min.js"></script>	
+	<!-- Flexslider 內容輪播滑動插件-->
+	<script src="js/jquery.flexslider.js"></script>
+	<!-- Magnific Popup 燈箱效果插件-->
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/magnific-popup-options.js"></script>
+	<!-- Waypoints 視差滾動插件-->
+	<script src="js/jquery.waypoints.min.js"></script>
 	<!-- Main -->
-	<script src="js/jquery.flexslider.js"></script>
 	<script src="js/main.js"></script>
 
 	</body>

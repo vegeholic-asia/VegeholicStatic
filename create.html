@@ -35,21 +35,23 @@
 	<link rel="stylesheet" type="text/css" href="css/flaticon.css">
 	<!-- Bootstrap  -->
 	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
 	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">	
 	<!-- Flexslider -->
 	<link rel="stylesheet" href="css/flexslider.css">
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
-
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
-
-	<style type="text/css">
+	
+	<style type="text/css">		
 		@import url(http://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
 		@import url(http://fonts.googleapis.com/earlyaccess/cwtexyen.css);
 	</style>
 
+		
 </head>
 <body>
 	<!-- Loading icon -->
@@ -60,11 +62,13 @@
 		<nav class="nav col-xs-12" role="navigation">
 			<div class="container">
 				<div class="row">
-					<ul class="navright">
-						<li><a href="#">註冊</a></li>
-						<li>｜</li>
-						<li><a href="#">登入</a></li>
-					</ul>
+					<div class="navright" >
+						<ul>
+							<li><a href="#">註冊</a></li>
+							<li>｜</li>
+							<li><a href="#">登入</a></li>
+						</ul>
+					</div>
 					<div class="col-xs-12 text-center">
 						<div id="logo"><a href="index.html"><img src="images/logo.svg" width="260" alt="全植食尚 Vegeholic"/> </a></div>
 			    	</div>
@@ -103,24 +107,32 @@
 		<div id="create">
 			<div class="container">
 				<div class="row">					
-					<!-- 右側菜單-->
-					<div class="col-md-10 col-md-push-3 animate-box">
+					
+					<div class="col-md-12 animate-box">
 						<div>
+							
 							<div class="form-group required maxlen">
  								<label for="title">食譜標題</label>
 								<input type="text" id="name" name="name" class="form-control required maxlen" placeholder="給你的食譜命一個響亮的名字吧" >
-  							</div>
+  							</div>  							
   							
 							<div class="row form-group">
-								<div class="col-md-6">
-									<label for="fname">封面照片</label>
-									<input type="text" id="fname" class="form-control" placeholder="上傳食譜封面照片">
-								</div>
-								<div class="col-md-6">
+								<div class="col-md-4">
+									<div class="uploadbox">
+										<label for="fname">上傳封面照片</label>
+										<input type="file" class="uploadbox" value="上傳" />
+										<input type="hidden" name="filepath" class="filepath" value="" />
+										<div class="uploadbox-bg">
+											<p>+</p>											
+										</div>										
+									</div>
+									
+									<hr>
+									
 									<div class="form-group">
 										<label for="message">分類標籤</label>
-										<select class="select optional form-control">
-											<option value="">未分類</option>
+										<select class="form-control">
+											<option value="未分類">未分類</option>
 											<option value="早餐">早餐</option>
 											<option value="中式鹹食">中式鹹食</option>
 											<option value="異國料理">異國料理</option>
@@ -132,54 +144,121 @@
 											<option value="其他">其他</option>
 										</select>
 									</div>
+									
+									<div class="form-group">
+										<label for="message">食譜出處</label>
+										<select class="form-control">
+											<option value="原創">原創</option>
+											<option value="授權">授權</option>
+										</select>
+									</div>
+									
+									<div class="form-group">
+										<label for="message">健康標示 (可複選)</label>
+										<select id="usertype" name="usertype" class="selectpicker show-tick form-control" multiple data-live-search="false">
+											<option value="高蛋白">高蛋白</option>
+											<option value="中式鹹食">低糖</option>
+											<option value="異國料理">低油</option>
+										</select>										
+									</div>								
+
 									<div class="form-group">
 										<label for="message">食譜介紹</label>
-										<textarea name="message" id="message" cols="30" rows="15" style="height: 80px;" class="form-control" placeholder="簡單的說明介紹你的食譜"></textarea>
+										<textarea name="message" cols="30" rows="15" style="height:100px;" class="form-control" placeholder="簡單的說明，介紹你的食譜"></textarea>
+									</div>
+								</div>								
+								
+								<div class="col-md-8">				
+							  		<div class="form-group">
+										<label for="message">料理食材</label>
+										
+										<ul class="list-group" id="list-group">
+											<li class="list-group-item ingr-list-group-item">
+												<div class="row">
+													<div class="col-sm-4 ingr-col">
+														<input type="text" class="form-control" placeholder="食材名稱" required="">
+													</div>
+													<div class="col-sm-3 ingr-col">
+														<input type="text" class="form-control" placeholder="份量" required="">
+													</div>
+													<div class="col-sm-5 ingr-col ingr-btn">
+														<div class="btn-group" role="group">
+															<button type="button" class="btn btn-sm btn-default ingr-up">
+																<i class="icon-chevron-up"></i>
+															</button>
+															<button type="button" class="btn btn-sm btn-default ingr-down">
+																<i class="icon-chevron-down"></i>
+															</button>
+															<button class="btn btn-sm btn-danger ingr-btn remove_one">
+																<i class="icon-minus2"></i>
+															</button>
+															<button class="btn btn-sm btn-primary add_new">
+																<i class="icon-plus2"></i>
+															</button>
+														</div>
+													</div>
+												</div>
+											</li>
+                            			</ul>
+                            			<div class="step-button-wrap">
+                                                <a href="" class="btn btn-default  add-steps"><i class="icon-plus2"></i> 新增食材群組</a>
+										</div>
 									</div>
 								</div>
-							</div>			
-							
-							<div class="row form-group">
-								<div class="col-md-12">
-									<label for="">食材</label>
-									<input type="text" id="email" class="form-control" placeholder="新增食材">
-								</div>
 							</div>
 
-							<div class="row form-group">
-								<div class="col-md-12">
-									<label for=" ">步驟</label>
-									<input type="text" id="subject" class="form-control" placeholder="加入步驟">
-								</div>
-							</div>
+							<div class="steps-wrapper">
+                    <div class="steps-panels">
+                       	<label for=" ">步驟說明</label>
+                        <div class="panel panel-default steps-panel">
+                            <div class="panel-body">
+                                <div class="row">
+                                
+									<div class="col-md-4 step-file-col">
+										<div class="uploadbox">
+											<input type="file" class="uploadbox" value="上傳" />
+											<input type="hidden" name="filepath" class="filepath" value="" />
+											<div class="uploadbox-bg">
+												<p>+</p>											
+											</div>										
+										</div>
+                                    </div>
 
+                                    <div class="col-md-8">
+                                        <div class="form-group ">
+                                            <label for="">步驟 <span class="step_count">1</span></label>
+                                            <textarea name="step-text[]" class="form-control" rows="5" cols="40" required placeholder="輸入料理步驟說明"></textarea>
+                                            <hr>
+                                            <div class="step-button-wrap">
+                                                <a href="" class="btn btn-default pull-right add-steps"><i class="icon-plus2"></i> 新增步驟</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+						
 							<div class="row form-group">
 								<div class="col-md-12">
 									<label for="message">備註</label>
-									<textarea name="message"  cols="30" rows="10" class="form-control" placeholder="還有什麼要補充的話～"></textarea>
+									<textarea name="message"  cols="30" rows="10" class="form-control" placeholder="還有什麼要補充的嗎～"></textarea>
 								</div>
 							</div>
 						</div>		
 					</div>
 					
-					<!-- 左側操作按鈕-->
-					<div class="col-md-2 col-md-pull-9 animate-box">
-						<div class="contact-info">
+					<div class="col-md-12">
+						<div class="contact-info pull-right">
 							<ul style="list-style-type:none">
-								<li>
-									<a class="btn btn-primary post" href="" id="publish-recipe">發佈</a>
-								</li>
-									
-								<li>
-									<a id="save-recipe" class="btn btn-default" href="">儲存</a>
-								</li>
-								<li>
-									<a id="delete-recipe" class="btn btn-default" href="" data-confirm="確定要刪除食譜嗎？清除的食譜將完全無法復原">刪除</a>
-								</li>
+								<li><a id="save-recipe" class="btn btn-default" href="#">儲存</a></li>
+								<li><a id="delete-recipe" class="btn btn-default" href="#" data-confirm="確定要刪除食譜嗎？清除的食譜將完全無法復原">刪除</a></li>
+								<li><a class="btn btn-primary post" href="#">發佈</a></li>
 							</ul>
 						</div>
-					</div>				
-					
+					</div>
 				</div>
 			</div>
 		</div>
@@ -193,7 +272,7 @@
 						<p><a href="index.html"><img src="images/logo_footer.png" alt="全植食尚 Vegeholic"/></a></p>
 					</div>
 					<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
-						<ul class=" footer-links">
+						<ul class="footer-links">
 							<h4>關於我們</h4>
 							<li><a href="about.html">公司資訊</a></li>
 							<li><a href="#">徵才訊息</a></li>
@@ -203,7 +282,7 @@
 					</div>
 
 					<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
-						<ul class=" footer-links">
+						<ul class="footer-links">
 							<h4>購物資訊</h4>
 							<li><a href="#">購物須知</a></li>
 							<li><a href="#">售後服務</a></li>
@@ -213,12 +292,12 @@
 					</div>
 
 					<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
-						<ul class=" footer-links">
+						<ul class="footer-links">
 							<h4>會員服務</h4>
-							<li><a href="#">個人首頁</a></li>
+							<li><a href="#">會員專區</a></li>
 							<li><a href="#">我的收藏</a></li>
-							<li><a href="#">帳號設定</a></li>
 							<li><a href="#">忘記密碼</a></li>
+							<li><a href="#">聯絡我們</a></li>
 						</ul>
 					</div>
 					<div class="col-md-4 col-sm-6 col-xs-6 col-md-push-1 ">
@@ -244,22 +323,30 @@
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
-
+	
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
+	<!-- jQuery Easing 動畫效果擴充-->
 	<script src="js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
 	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- countTo -->
-	<script src="js/jquery.countTo.js"></script>
-	<!-- Magnific Popup -->
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+	<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/i18n/defaults-*.min.js"></script>
+	<!-- Flexslider 內容輪播滑動插件-->
+	<script src="js/jquery.flexslider.js"></script>
+	<!-- Magnific Popup 燈箱效果插件-->
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/magnific-popup-options.js"></script>
+	<!-- Waypoints 視差滾動插件-->
+	<script src="js/jquery.waypoints.min.js"></script>
 	<!-- Main -->
-	<script src="js/jquery.flexslider.js"></script>
 	<script src="js/main.js"></script>
+
 </body>
+<script>
+
+</script>
 </html>
+
